@@ -4,6 +4,7 @@ library(ggplot2)
 library(hrbrthemes)
 library(lubridate)
 library(tidyr)
+library(writexl)
 
 #Akses API data Covid 19 Provinsi Jawa Barat
 set_config(config(ssl_verifypeer = 0L))
@@ -206,8 +207,12 @@ cov_jabar_akumulasi_pivot <-
   )
 
 dim(cov_jabar_akumulasi_pivot)
-
 glimpse(cov_jabar_akumulasi_pivot)
+
+#save Data Frame to Excel 
+df <- data.frame(cov_jabar_akumulasi_pivot)
+df
+write_xlsx(df, "D:\\Data Penting\\Portofolio\\Analisis Covid19 Jabar\\datacovidjabar.xlsx")
 
 #membuat grafik
 ggplot(cov_jabar_akumulasi_pivot, aes(tanggal, jumlah, colour = (kategori))) + 
@@ -239,3 +244,9 @@ ggplot(cov_jabar_akumulasi_pivot, aes(tanggal, jumlah, colour = (kategori))) +
     legend.position = "top"
   )
 
+df_2 <- data.frame(cov_jabar_pekanan)
+df_2
+df_3 <-  data.frame(cov_jabar_akumulasi)
+df_3
+write_xlsx(df_2, "D:\\Data Penting\\Portofolio\\Analisis Covid19 Jabar\\cov_jabar_pekanan.xlsx")
+write_xlsx(df_2, "D:\\Data Penting\\Portofolio\\Analisis Covid19 Jabar\\cov_jabar_akumulasi.xlsx")
