@@ -248,5 +248,8 @@ df_2 <- data.frame(cov_jabar_pekanan)
 df_2
 df_3 <-  data.frame(cov_jabar_akumulasi)
 df_3
+df_4 <- data.frame(cov_jabar)
+df_4
 write_xlsx(df_2, "D:\\Data Penting\\Portofolio\\Analisis Covid19 Jabar\\cov_jabar_pekanan.xlsx")
 write_xlsx(df_2, "D:\\Data Penting\\Portofolio\\Analisis Covid19 Jabar\\cov_jabar_akumulasi.xlsx")
+write_xlsx(df_2, "D:\\Data Penting\\Portofolio\\Analisis Covid19 Jabar\\cov_jabar.xlsx")
